@@ -83,7 +83,16 @@ describe.each([
     ["Photography", 2022, 1900],
     ["VideoRecording", 2020, 1700],
     ["VideoRecording", 2021, 1800],
-    ["VideoRecording", 2022, 1900]
+    ["VideoRecording", 2022, 1900],
+    // without this test cases prices of this two services can be anything
+    ["TwoDayEvent", 2020, 400],
+    ["TwoDayEvent", 2021, 400],
+    ["TwoDayEvent", 2022, 400],
+    ["BlurayPackage", 2020, 300],
+    ["BlurayPackage", 2021, 300],
+    ["BlurayPackage", 2022, 300],
+    //
+
 ])("calculatePrice.singleService (%s, %i)", (service: ServiceType, year: ServiceYear, expectedPrice) => {
     test("no discount applied", () => {
         const result = calculatePrice([service], year);
